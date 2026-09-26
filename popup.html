@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Pilgrim Autofill</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <main class="app">
+    <header class="header">
+      <div>
+        <h1>Pilgrim Autofill <span class="version-label">V0.4.2</span></h1>
+        <p class="muted">User-assisted autofill only</p>
+      </div>
+      <button id="newProfileBtn" class="icon-btn" title="Create new profile">+</button>
+    </header>
+
+    <section id="profileBar" class="profile-bar">
+      <div class="field grow">
+        <label for="profileSelect">Saved profile</label>
+        <select id="profileSelect"></select>
+      </div>
+      <div class="profile-actions">
+        <button id="editProfileBtn" class="secondary">Edit</button>
+        <button id="deleteProfileBtn" class="danger">Delete</button>
+      </div>
+    </section>
+
+    <section id="editorSection" hidden>
+      <div class="section-title-row">
+        <h2 id="editorTitle">Create profile</h2>
+        <span id="countBadge" class="badge">0 / 6 pilgrims</span>
+      </div>
+
+      <div class="card">
+        <h3>Profile</h3>
+
+        <label for="profileName">Profile name</label>
+        <input id="profileName" placeholder="e.g. Tirumala Family">
+
+        <h3 class="subheading">General Details</h3>
+
+        <div class="grid2">
+          <div>
+            <label for="email">Email Address</label>
+            <input id="email" type="email" autocomplete="off">
+          </div>
+          <div>
+            <label for="city">City</label>
+            <input id="city" autocomplete="off">
+          </div>
+          <div>
+            <label for="state">State</label>
+            <input id="state" autocomplete="off">
+          </div>
+          <div>
+            <label for="country">Country</label>
+            <input id="country" autocomplete="off" value="India">
+          </div>
+          <div>
+            <label for="pincode">Pincode</label>
+            <input id="pincode" inputmode="numeric" maxlength="6" autocomplete="off">
+          </div>
+        </div>
+      </div>
+
+      <div class="pilgrim-header">
+        <h3>Pilgrim Details</h3>
+        <button id="addPilgrimBtn" class="secondary">+ Add Pilgrim</button>
+      </div>
+
+      <div id="pilgrimsContainer"></div>
+
+      <div class="actions sticky-actions">
+        <button id="cancelBtn" class="secondary">Cancel</button>
+        <button id="saveBtn" class="primary">Save profile</button>
+      </div>
+    </section>
+
+    <section id="emptySection" class="empty">
+      <p>No profiles saved yet.</p>
+      <button id="startBtn" class="primary">Create first profile</button>
+    </section>
+
+    <section id="useSection" class="use-section" hidden>
+      <button id="fillBtn" class="primary wide">Fill form</button>
+      <p id="status" class="status" role="status"></p>
+    </section>
+
+    <p class="warning">
+      The extension only fills information after you request it. It never clicks booking/submit/payment controls,
+      bypasses CAPTCHA/queues, refreshes for availability, or calls private booking APIs.
+    </p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>

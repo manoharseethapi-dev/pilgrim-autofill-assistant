@@ -1,0 +1,16 @@
+{
+  "manifest_version": 3,
+  "name": "Pilgrim Form Autofill V0.4.2",
+  "version": "0.4.2",
+  "description": "User-triggered autofill helper for pilgrim and general details. It does not submit bookings or automate ticket availability.",
+  "minimum_chrome_version": "120",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Pilgrim Autofill"
+  }
+}
