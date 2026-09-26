@@ -61,6 +61,14 @@ The website's frontend/DOM can change. The field matcher is deliberately generic
 
 Before publishing a public extension, confirm that the current terms/rules of the site permit this type of third-party autofill assistance.
 
+## Privacy
+
+Profile information is stored locally using Chrome extension storage and is not sent to a project server.
+
+## Disclaimer
+
+This is an independent browser extension and is not affiliated with, endorsed by, or officially associated with TTD.
+
 ## V0.4.1
 
 This build restores the generic pilgrim Name/Age/ID matching used in the
